@@ -1,5 +1,4 @@
 # ideas
-
 just sort of a to-do list for ideas i come up with that i don't want to forget
 
 ## Current Ideas
@@ -9,4 +8,4 @@ just sort of a to-do list for ideas i come up with that i don't want to forget
 * dextro.space: harm reduction community for dxm
 * m0c.us: LoA, other ideas
 * oz.smoqueed.com: web based MUSH/IF-esque concept
-
+* kaomanage: kaomoji manager
