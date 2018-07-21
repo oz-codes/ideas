@@ -1,0 +1,17 @@
+﻿body {
+  width: 480px;
+}
+* {
+  margin: 0;
+}  
+
+.main {
+  margin-left: 1em;
+  width: 100%;
+}
+
+#kaomoji-list-header, #kaomoji-list-body .row {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+ }

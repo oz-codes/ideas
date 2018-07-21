@@ -1,0 +1,112 @@
+﻿
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        height: 30px;
+        width: 30px;
+        outline: none;
+            }
+    </style>
+    <link href="kaomanage.css" rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <div class='main' id='main'>
+      <div class='title' id='head'>
+        kaomanage
+      </div>
+      <div class='about' id='about'>
+	<div class='subtitle' id='about-title'> 
+		How-To
+	</div>
+	<div class='body' id='about-body'>
+		<p>use this interface to add keywords and associate kaomoji with those keywords.</p>
+		<p>then, as you surf the web, ctrl+shift+right click on any element you want to insert to display a context menu.</p>
+		<p>pick a keyword and a random kaomoji from that keyword will be appended to what you clicked on!</p>
+		<p>
+			<em>
+				ctrl+shift+left-click an emoji in the kaomanage menu to delete it.
+			</em>
+		</p>
+      <div class="config" id="settings">
+        <div class='subtitle' id='list-title'>
+          Your Kaomoji
+        </div>
+        <div class='content' id='list-body'>
+          <div class='text' id='list-text'>
+            This is your current kaomanage configuration (keywords, and the kaomoji associated with them.
+          </div>
+          <div class='grid' id='kaomoji-list'>
+            <div class='header' id='kaomoji-list-header'>
+              <div class='entry' id='kaomoji-list-header-keyword'>
+                  Keyword
+              </div>
+              <div class='entry' id='kaomoji-list-header-kaomoji'>
+                  Kaomoji
+              </div>
+            </div>
+            <div class='body' id='kaomoji-list-body'>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='action' id='add-keyword'>
+        <div class='subtitle' id='add-keyword-title'>
+          Add Keyword
+        </div>
+        <div class='content' id='add-keyword-body'>
+          <div class='about' id='add-keyword-body-text'>
+            Add a new keyword to listen for.
+          </div>
+          <div class=form' id='add-keyword-body-form'>
+            <form class='input' id='add-keyword-form'>
+              <div class='input-field' id='add-keyword-form-keyword'>
+                <label for='keyword'>
+                  Keyword
+                </label>
+                <input type='text' placeholder='Keyword...' class='text-input' id='add-keyword-form-keyword-input' name='keyword' />
+              </div>
+              <div class='submit' id='add-keyword-form-submit'>
+                <input type='submit' value='add dat keyw0rd!' />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="action" id='add-kaomoji'>
+        <div class='subtitle' id='add-kaomoji-title'>
+            Add Kaomoji
+        </div>
+        <div class='content' id='add-kaomoji-body'>
+          <div class='about' id='add-kaomoji-body-text'>
+            Add a new kaomoji for a given keyword.
+          </div>
+          <div class=form' id='add-kaomoji-body-form'>
+            <form class='input' id='add-kaomoji-form'>
+              <div class='input-field' id='add-kaomoji-form-keyword'>
+                <label for='kaomoji-keyword'>
+                  Keyword
+                </label>
+                <select name='kaomoji-keyword' id='add-kaomoji-body-form-keywords' class='list'>
+                </select>
+              </div>
+              <div class='input-field' id='add-kaomoji-form-kaomoji'>
+                <label for='kaomoji'>
+                  Kaomoji
+                </label>
+                <input name='kaomoji' placeholder='(͠≖ ͜ʖ͠≖)(͠≖ ͜ʖ͠≖)(͠≖ ͜ʖ͠≖)(͠≖ ͜ʖ͠≖)' id='add-kaomoji-body-form-kaomoji' class='text-input' />
+              </div>
+              <div class='submit' id='add-kaomoji-form-submit'>
+                <input type='submit' value='add dat kaomoji!' />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="3rd.party/jquery.min.js"></script>
+    <script src="3rd.party/lodash.js"></script>
+    <script src="kaomanage.js"></script>
+  </body>
+</html>

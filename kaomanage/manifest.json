@@ -1,0 +1,21 @@
+﻿{
+  "name": "kaomanage",
+  "version": "1.0",
+  "description": "im in ur typings managin ur kaos <3",
+  "permissions": ["activeTab", "declarativeContent", "storage","contextMenus"],
+  "background": {
+    "scripts": ["3rd.party/lodash.js", "3rd.party/jquery.min.js", "kaomanage.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["3rd.party/jquery.min.js","3rd.party/lodash.js", "kaomanage-content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "page_action": {
+    "default_popup": "kaomanage.html"
+  },
+  "manifest_version": 2
+}
