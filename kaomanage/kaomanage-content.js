@@ -3,7 +3,6 @@
   var clicked = null;
   $(function() {
       document.addEventListener('contextmenu', (ev) => {
-        console.log("context menu");
         if(ev.button == 2 && ev.shiftKey && ev.ctrlKey) {
 	  $(".kaomanage-keyword").remove()
           ev.preventDefault(); ev.stopPropagation();
@@ -18,6 +17,8 @@
 				marginLeft: '1em',
 				marginRight: '0.5em'
 			});	
+			kwd.mouseover((ev) => { $(kwd).addClass('current'); $(kwd).css({backgroundColor: "#8888FF"}); });
+			kwd.mouseout((ev) => { $(kwd).removeClass('current'); $(kwd).css({backgroundColor: "#FFFFFF"}); });
 			kwd.mousedown((ev) => {				
 				insertKaomoji(keyword);
 				$(".kaomanaged").removeClass("kaomanaged");
@@ -29,25 +30,25 @@
 		})
 		let container = $("<div class='kaomanage-context'></div>");
 		_.each(keywords, (keyword) => $(container).append(keyword));
-		$(container).css({
-			display: 'none', 
+		$(container).css({ 
 			position: 'absolute',
 			display: 'grid',
 			backgroundColor: '#fafafa',
 			borderStyle: '1px solid gray', 
-			left: ev.clientX, 
-			top: ev.clientY, 
+			left: ev.pageX, 
+			top: ev.pageY, 
 			zIndex: 9001
 			})
+		$(container).fadeOut(1);
 		console.log("container",container,"keywords",keywords);
 		$("body").append(container);
-		$(container).fadeIn(300);
+		$(container).fadeIn(100);
 	  })
          return false;
         }
       })
       document.addEventListener("mousedown", (ev) => {
-        console.log("mousedowner");
+        $('.kaomanage-context').fadeOut(300, (e) => { $(this).remove(); });
         if(ev.button == 2) {
           //$("*").removeClass("kaomanaged");
           //$(ev.target).addClass('kaomanaged');
